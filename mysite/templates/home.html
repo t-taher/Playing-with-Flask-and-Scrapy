@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--    <legend>مباريات اليوم</legend>-->
+    {% for post in posts %}
+        <article class="media content-section" al>
+          <div class="media-body">
+            <div class="article-metadata" align="right">
+              {{ post.league[0] }}
+<!--              <small class="text-muted">{{ post.channel }}&ensp;{{ post.std}}&ensp;{{post.state}}</small>-->
+            </div>
+              <h2 align="right"><a class="article-title" href="{{url_for('match',name_1=post.team_2[0],name_2=post.team_1[0])}}"><strong>{{ post.team_2[0] }}{{post.rslt[1]}}</strong>&ensp;<small>VS</small>&ensp;<strong>{{ post.team_1[0] }}{{post.rslt[0]}}</strong></strong></a></h2>
+              <p class="article-content" align="right">{{ post.tme }}&ensp;{{post.state}}&ensp;{{ post.channel }}&ensp;{{ post.std}}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

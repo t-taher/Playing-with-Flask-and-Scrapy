@@ -1,0 +1,25 @@
+{%extends "layout.html" %}
+{%block content%}
+  <div class="container">
+      <header>
+        <img src="{{url_for('static',filename='logo.svg')}}" alt="logo">
+
+        <nav>
+            <a href="#" class="hide">
+              <img src='{{ url_for("static",filename="ham.svg")}}' alt="menu">
+            </a>
+            <ul class="show hide" id="nav">
+              <li><a href="/home">Home</a></li>
+              <li><a href="#">contact</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+        </nav>
+      </header>
+      <section>
+        <img src='{{ url_for("static",filename="server.svg")}}' alt="server">
+        <h1>web hosting</h1>
+        <img src="{{url_for('static',filename='scroll.svg')}}" alt="" class="scroll">
+
+      </section>
+  </div>
+{%endblock content%}
